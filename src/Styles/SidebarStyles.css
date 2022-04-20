@@ -1,7 +1,7 @@
 #sidebarContainer {
   width: 300px;
   height: 100vh;
-  background-color: pink;
+  background-color: rgba(0, 23, 61, 0.7);
 }
 
 #sidebarHeader {
@@ -25,4 +25,25 @@
   padding: 10px;
   text-align: left;
   white-space: nowrap;
+}
+
+#sidebarButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#darkModeButton {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+}
+
+#logoutButton {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: pink;
 }

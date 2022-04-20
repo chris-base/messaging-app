@@ -16,6 +16,12 @@ const SidebarComponent = () => {
           </div>
         );
       })}
+
+      <div id='sidebarButtonContainer'>
+        <div id='darkModeButton' />
+
+        <div id='logoutButton' />
+      </div>
     </div>
   );
 };

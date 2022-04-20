@@ -1,9 +1,12 @@
 import "../Styles/MainChatStyles.css";
+import MessageSendBoxComponent from "./MessageSendBoxComponent";
 
 const MainChatComponent = () => {
   return (
     <div id='mainChatContainer'>
-      <div></div>
+      <div id='messageBoxContainer'>
+        <MessageSendBoxComponent />
+      </div>
     </div>
   );
 };
