@@ -2,6 +2,13 @@
   width: 300px;
   height: 100vh;
   background-color: rgba(0, 23, 61, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #sidebarHeader {
@@ -34,16 +41,21 @@
   padding: 10px;
 }
 
-#darkModeButton {
+.sbButtons {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
-  background-color: green;
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#darkModeButton {
+  background-image: url("../../public/dark_mode_icon.svg");
 }
 
 #logoutButton {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  background-color: pink;
+  background-image: url("../../public/logout_icon.svg");
 }
