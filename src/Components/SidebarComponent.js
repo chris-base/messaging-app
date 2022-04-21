@@ -1,7 +1,7 @@
 import "../Styles/SidebarStyles.css";
 
 const SidebarComponent = ({ darkMode, setDarkMode }) => {
-  let channels = ["Main channel", "second channel"];
+  let directMessages = ["User 1", "User 2"];
 
   return (
     <div id='sidebarContainer'>
@@ -10,10 +10,10 @@ const SidebarComponent = ({ darkMode, setDarkMode }) => {
           <h1>Messaging App</h1>
         </div>
 
-        {[...channels].map((channel, index) => {
+        {[...directMessages].map((channel, index) => {
           return (
-            <div id='channelContainer' key={index}>
-              <p id='channelTitle'>#{channel}</p>
+            <div id='directMessageContainer' key={index}>
+              <p id='directMessageName'>@{channel}</p>
             </div>
           );
         })}
