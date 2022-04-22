@@ -20,8 +20,14 @@ const MessageSendBoxComponent = () => {
         />
       </form>
 
-      <div id='sendMessageButton'>
-        <div id='sendMessageIcon' />
+      <div id='messageButtonsContainer'>
+        <div id='attachmentButton'>
+          <div id='attachmentIcon' />
+        </div>
+
+        <div id='sendMessageButton'>
+          <div id='sendMessageIcon' />
+        </div>
       </div>
     </div>
   );

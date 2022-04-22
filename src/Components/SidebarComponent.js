@@ -1,6 +1,6 @@
 import "../Styles/SidebarStyles.css";
 
-const SidebarComponent = ({ darkMode, setDarkMode }) => {
+const SidebarComponent = ({ darkMode, setDarkMode, setUserOpen }) => {
   let directMessages = ["User 1", "User 2"];
 
   return (

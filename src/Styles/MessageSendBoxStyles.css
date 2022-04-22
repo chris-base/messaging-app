@@ -21,13 +21,36 @@
   outline: none;
   border: none;
   background-color: transparent;
+  padding-left: 20px;
+}
+
+#messageButtonsContainer {
+  display: flex;
+}
+
+#attachmentButton {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+}
+
+#attachmentIcon {
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../public/attach_file_icon.svg");
 }
 
 #sendMessageButton {
   cursor: pointer;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid rgba(61, 194, 255, 0.5);
+  border-radius: 0 5px 5px 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
 }
