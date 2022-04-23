@@ -1,6 +1,6 @@
 import "../Styles/SidebarStyles.css";
 
-const SidebarComponent = ({ darkMode, setDarkMode, setUserOpen }) => {
+const SidebarComponent = ({ darkMode, setDarkMode, userOpen, setUserOpen }) => {
   let directMessages = ["User 1", "User 2"];
 
   return (
@@ -10,10 +10,14 @@ const SidebarComponent = ({ darkMode, setDarkMode, setUserOpen }) => {
           <h1>Messaging App</h1>
         </div>
 
-        {[...directMessages].map((channel, index) => {
+        {[...directMessages].map((user, index) => {
           return (
-            <div id='directMessageContainer' key={index}>
-              <p id='directMessageName'>@{channel}</p>
+            <div
+              className={user === userOpen ? "selectedDirectMessageContainer" : "directMessageContainer"}
+              onClick={() => setUserOpen(user)}
+              key={index}
+            >
+              <p className={user === userOpen ? "selectedDirectMessageName" : "directMessageName"}>@{user}</p>
             </div>
           );
         })}

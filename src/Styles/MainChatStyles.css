@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* padding: 0 20px; */
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -22,6 +21,7 @@
   text-align: left;
   margin-left: 30px;
   color: white;
+  cursor: pointer;
 }
 
 #userHeaderOnlineStatus {
@@ -34,9 +34,36 @@
   margin-left: 20px;
 }
 
+#userHeaderOnlineStatusTextContainer {
+  opacity: 0.5;
+  background-color: rgba(0, 23, 61, 1);
+  width: 90px;
+  height: 30px;
+  margin-left: 20px;
+  border-radius: 15px 5px 5px 15px;
+  display: none;
+  align-items: center;
+}
+
+#userHeaderOnlineStatusArrow {
+  background-color: rgba(0, 23, 61, 1);
+  width: 27px;
+  height: 27px;
+  margin-left: -1px;
+  border-radius: 15px 0 15px 0;
+  -webkit-transform: rotateZ(45deg);
+}
+
+#userHeaderOnlineStatusText {
+  width: 20px;
+  margin-left: 0px;
+  color: rgba(71, 255, 166, 1);
+  z-index: 1;
+}
+
 #messageBoxContainer {
   height: 50px;
-  margin: 0 30px 10px 30px;
+  margin: 0 30px 20px 30px;
   display: flex;
   justify-content: center;
 }

@@ -5,11 +5,11 @@ import MainChatComponent from "./Components/MainChatComponent";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [userOpen, setUserOpen] = useState("@User 1");
+  const [userOpen, setUserOpen] = useState("User 1");
 
   return (
     <div className='App'>
-      <SidebarComponent darkMode={darkMode} setDarkMode={setDarkMode} setUserOpen={setUserOpen} />
+      <SidebarComponent darkMode={darkMode} setDarkMode={setDarkMode} userOpen={userOpen} setUserOpen={setUserOpen} />
       <MainChatComponent userOpen={userOpen} />
     </div>
   );
