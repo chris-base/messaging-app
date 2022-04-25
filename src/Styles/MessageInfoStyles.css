@@ -1,0 +1,29 @@
+#messageInfoContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+#messageBubbleContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 50%;
+  border-radius: 10px;
+}
+
+#messageBubbleText {
+  margin: 10px 15px;
+  text-align: left;
+}
+
+#messageTimeContainer {
+  display: flex;
+  margin: 0 5px;
+}
+
+#messageTimeText {
+  color: black;
+  margin: 0;
+  font-size: 12px;
+}

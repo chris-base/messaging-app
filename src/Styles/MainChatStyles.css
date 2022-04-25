@@ -7,7 +7,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background-color: rgba(0, 23, 61, 0.4);
+  background-color: rgba(0, 23, 61, 0.2);
 }
 
 #userHeaderContainer {
@@ -60,6 +60,13 @@
   margin-left: 0px;
   color: rgba(71, 255, 166, 1);
   z-index: 1;
+}
+
+#messagesContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  padding: 0 30px 25px 30px;
 }
 
 #messageBoxContainer {

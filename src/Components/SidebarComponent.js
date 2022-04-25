@@ -28,13 +28,13 @@ const SidebarComponent = ({ darkMode, setDarkMode, userOpen, setUserOpen }) => {
           onClick={() => setDarkMode(!darkMode)}
           class='sbButtons'
           id='darkModeButton'
-          style={darkMode ? { filter: "invert(100%) sepia(53%) saturate(353%) hue-rotate(240deg) brightness(107%) contrast(102%)" } : {}}
+          style={darkMode ? {} : { filter: "invert(100%) sepia(53%) saturate(353%) hue-rotate(240deg) brightness(107%) contrast(102%)" }}
         />
 
         <div
           class='sbButtons'
           id='logoutButton'
-          style={darkMode ? { filter: "invert(100%) sepia(53%) saturate(353%) hue-rotate(240deg) brightness(107%) contrast(102%)" } : {}}
+          style={darkMode ? {} : { filter: "invert(100%) sepia(53%) saturate(353%) hue-rotate(240deg) brightness(107%) contrast(102%)" }}
         />
       </div>
     </div>
