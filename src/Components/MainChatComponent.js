@@ -1,12 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "../Styles/MainChatStyles.css";
 import MessageSendBoxComponent from "./MessageSendBoxComponent";
 import MessageInfoComponent from "./MessageInfoComponent";
 
 const MainChatComponent = ({ userOpen }) => {
-  let statusRef = useRef(null);
-
-  const messages = [
+  const [messages, setMessages] = useState([
     { user: 0, time: "Jan 1, 2022", message: "This is a test message." },
     { user: 1, time: "Jan 1, 2022", message: "This is a return test message." },
     {
@@ -21,7 +19,9 @@ const MainChatComponent = ({ userOpen }) => {
       message:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
     },
-  ];
+  ]);
+
+  let statusRef = useRef(null);
 
   const showStatusText = () => {
     statusRef.current.style.display = "flex";
@@ -51,7 +51,7 @@ const MainChatComponent = ({ userOpen }) => {
       </div>
 
       <div id='messageBoxContainer'>
-        <MessageSendBoxComponent />
+        <MessageSendBoxComponent messages={messages} setMessages={setMessages} />
       </div>
     </div>
   );
