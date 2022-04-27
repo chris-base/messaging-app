@@ -10,11 +10,13 @@ const MessageSendBoxComponent = ({ messages, setMessages }) => {
   };
 
   const sendMessage = () => {
-    let tempMessage = [...messages];
-    tempMessage.splice(0, 0, { user: 0, time: "Jan 10, 2022", message: inputRef.current.value });
-    console.log(tempMessage);
-    inputRef.current.value = "";
-    setMessages(tempMessage);
+    if (inputRef.current.value.length > 0) {
+      let tempMessage = [...messages];
+      let date = new Date().toLocaleString();
+      tempMessage.splice(0, 0, { user: 0, time: `${date}`, message: inputRef.current.value });
+      inputRef.current.value = "";
+      setMessages(tempMessage);
+    }
   };
 
   return (
