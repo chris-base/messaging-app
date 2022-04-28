@@ -4,10 +4,17 @@ const SidebarComponent = ({ darkMode, setDarkMode, userOpen, setUserOpen }) => {
   let directMessages = ["User 1", "User 2"];
 
   return (
-    <div id='sidebarContainer'>
+    <div
+      id='sidebarContainer'
+      style={
+        darkMode
+          ? { backgroundColor: "rgba(0, 23, 61, 0.2)", borderRight: "1px solid rgba(0, 23, 61, 0.7)" }
+          : { backgroundColor: "rgba(0, 23, 61, 0.7)" }
+      }
+    >
       <div id='mainSBContents'>
         <div id='sidebarHeader'>
-          <h1>Messaging App</h1>
+          <h1 style={darkMode ? { color: "black" } : { color: "white" }}>Messaging App</h1>
         </div>
 
         {[...directMessages].map((user, index) => {
@@ -15,6 +22,7 @@ const SidebarComponent = ({ darkMode, setDarkMode, userOpen, setUserOpen }) => {
             <div
               className={user === userOpen ? "selectedDirectMessageContainer" : "directMessageContainer"}
               onClick={() => setUserOpen(user)}
+              style={darkMode ? { backgroundColor: "rgba(0, 23, 61, 0.3)" } : { backgroundColor: "rgba(0, 0, 0, 0.1)" }}
               key={index}
             >
               <p className={user === userOpen ? "selectedDirectMessageName" : "directMessageName"}>@{user}</p>

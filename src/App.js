@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='App'>
       <SidebarComponent darkMode={darkMode} setDarkMode={setDarkMode} userOpen={userOpen} setUserOpen={setUserOpen} />
-      <MainChatComponent userOpen={userOpen} />
+      <MainChatComponent darkMode={darkMode} userOpen={userOpen} />
     </div>
   );
 }

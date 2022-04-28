@@ -3,7 +3,7 @@ import "../Styles/MainChatStyles.css";
 import MessageSendBoxComponent from "./MessageSendBoxComponent";
 import MessageInfoComponent from "./MessageInfoComponent";
 
-const MainChatComponent = ({ userOpen }) => {
+const MainChatComponent = ({ darkMode, userOpen }) => {
   let date = new Date().toLocaleString();
   const [messages, setMessages] = useState([
     { user: 0, time: date, message: "This is a return test message." },
@@ -21,9 +21,11 @@ const MainChatComponent = ({ userOpen }) => {
   };
 
   return (
-    <div id='mainChatContainer'>
-      <div id='userHeaderContainer'>
-        <p id='userHeaderNameText'>@{userOpen}</p>
+    <div id='mainChatContainer' style={darkMode ? { backgroundColor: "white" } : {}}>
+      <div id='userHeaderContainer' style={darkMode ? { backgroundColor: "rgba(0, 23, 61, 0.3)" } : { backgroundColor: "rgba(0, 23, 61, 0.8)" }}>
+        <p id='userHeaderNameText' style={darkMode ? { color: "black" } : {}}>
+          @{userOpen}
+        </p>
 
         <div id='userHeaderOnlineStatus' onMouseOver={() => showStatusText()} onMouseLeave={hideStatusText} />
 
