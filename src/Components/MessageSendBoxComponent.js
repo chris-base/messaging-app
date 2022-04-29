@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "../Styles/MessageSendBoxStyles.css";
 
-const MessageSendBoxComponent = ({ messages, setMessages }) => {
+const MessageSendBoxComponent = ({ messages, setMessages, userOpen }) => {
   let inputRef = useRef(null);
 
   const prevDef = (e) => {
@@ -11,11 +11,25 @@ const MessageSendBoxComponent = ({ messages, setMessages }) => {
 
   const sendMessage = () => {
     if (inputRef.current.value.length > 0) {
-      let tempMessage = [...messages];
+      let tempAllMessages = [];
+      let tempMessage;
+      let currUser = [userOpen];
+
+      messages.map((user) => {
+        if (user[0] === userOpen) {
+          tempMessage = [...user[1]];
+          return 0;
+        } else {
+          tempAllMessages.push(user);
+        }
+      });
+
       let date = new Date().toLocaleString();
       tempMessage.splice(0, 0, { user: 0, time: `${date}`, message: inputRef.current.value });
+      currUser.push(tempMessage);
+      tempAllMessages.push(currUser);
       inputRef.current.value = "";
-      setMessages(tempMessage);
+      setMessages(tempAllMessages);
     }
   };
 

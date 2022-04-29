@@ -6,8 +6,14 @@ import MessageInfoComponent from "./MessageInfoComponent";
 const MainChatComponent = ({ darkMode, userOpen }) => {
   let date = new Date().toLocaleString();
   const [messages, setMessages] = useState([
-    { user: 0, time: date, message: "This is a return test message." },
-    { user: 1, time: date, message: "This is a test message." },
+    [
+      "User 1",
+      [
+        { user: 0, time: date, message: "This is a return test message." },
+        { user: 1, time: date, message: "This is a test message." },
+      ],
+    ],
+    ["User 2", [{ user: 1, time: date, message: "This is a test message." }]],
   ]);
 
   let statusRef = useRef(null);
@@ -36,13 +42,17 @@ const MainChatComponent = ({ darkMode, userOpen }) => {
       </div>
 
       <div id='messagesContainer'>
-        {messages.map((messageInfo, index) => {
-          return <MessageInfoComponent messageInfo={messageInfo} key={index} />;
+        {messages.map((user) => {
+          if (user[0] === userOpen) {
+            return user[1].map((messageInfo, index) => {
+              return <MessageInfoComponent messageInfo={messageInfo} key={index} />;
+            });
+          }
         })}
       </div>
 
       <div id='messageBoxContainer'>
-        <MessageSendBoxComponent messages={messages} setMessages={setMessages} />
+        <MessageSendBoxComponent messages={messages} setMessages={setMessages} userOpen={userOpen} />
       </div>
     </div>
   );
