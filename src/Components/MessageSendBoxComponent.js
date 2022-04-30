@@ -13,10 +13,10 @@ const MessageSendBoxComponent = ({ messages, setMessages, userOpen }) => {
     if (inputRef.current.value.length > 0) {
       let tempAllMessages = [];
       let tempMessage;
-      let currUser = [userOpen];
+      let currUser = [userOpen[0]];
 
       messages.map((user) => {
-        if (user[0] === userOpen) {
+        if (user[0] === userOpen[0]) {
           tempMessage = [...user[1]];
           return 0;
         } else {

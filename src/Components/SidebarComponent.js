@@ -1,7 +1,10 @@
 import "../Styles/SidebarStyles.css";
 
 const SidebarComponent = ({ darkMode, setDarkMode, userOpen, setUserOpen }) => {
-  let directMessages = ["User 1", "User 2"];
+  let directMessages = [
+    ["User 1", true],
+    ["User 2", false],
+  ];
 
   return (
     <div
@@ -20,12 +23,12 @@ const SidebarComponent = ({ darkMode, setDarkMode, userOpen, setUserOpen }) => {
         {[...directMessages].map((user, index) => {
           return (
             <div
-              className={user === userOpen ? "selectedDirectMessageContainer" : "directMessageContainer"}
-              onClick={() => setUserOpen(user)}
+              className={user[0] === userOpen[0] ? "selectedDirectMessageContainer" : "directMessageContainer"}
+              onClick={() => setUserOpen([user[0], user[1]])}
               style={darkMode ? { backgroundColor: "rgba(0, 23, 61, 0.3)" } : { backgroundColor: "rgba(0, 0, 0, 0.1)" }}
               key={index}
             >
-              <p className={user === userOpen ? "selectedDirectMessageName" : "directMessageName"}>@{user}</p>
+              <p className={user[0] === userOpen[0] ? "selectedDirectMessageName" : "directMessageName"}>@{user[0]}</p>
             </div>
           );
         })}

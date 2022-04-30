@@ -24,13 +24,21 @@
 }
 
 #userHeaderOnlineStatus {
-  background-color: #47ffa6;
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 10px 5px rgba(71, 255, 166, 0.4);
   width: 15px;
   height: 15px;
   margin-left: 20px;
+}
+
+.onlineStatusBubble {
+  background-color: #47ffa6;
+  box-shadow: 0 0 10px 5px rgba(71, 255, 166, 0.4);
+}
+
+.offlineStatusBubble {
+  background-color: #ff483b;
+  box-shadow: 0 0 10px 5px rgba(255, 72, 59, 0.4);
 }
 
 #userHeaderOnlineStatusTextContainer {
