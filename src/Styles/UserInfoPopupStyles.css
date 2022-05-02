@@ -9,19 +9,57 @@
 }
 
 #userPopupContainer {
-  width: 500px;
-  height: 500px;
+  width: 250px;
+  height: 200px;
   background-color: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 50px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-#userPopupTitleInfo {
-  background-color: pink;
+#userInfoOnlineStatusContainer {
+  width: 250px;
+  height: 50px;
+  position: absolute;
   display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+#userInfoOnlineStatusBubble {
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 15px;
+  height: 15px;
+  margin-right: 20px;
+}
+
+#userPopupTitleInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+#userIconImgContainer {
+  background-color: rgba(250, 250, 250, 0.5);
+  width: 60px;
+  height: 60px;
+  background-size: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../public/dark_mode_icon.svg");
+  border-radius: 10px;
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#userInfoName {
+  font-size: 30px;
 }

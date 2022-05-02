@@ -21,8 +21,16 @@ const UserInfoPopupComponent = ({ userOpen, userPopupActive, setUserPopupActive 
   return (
     <div id='mainUserPopupContainer' ref={mainRef}>
       <div id='userPopupContainer' ref={containerRef}>
+        <div id='userInfoOnlineStatusContainer'>
+          <div id='userInfoOnlineStatusBubble' className={userOpen[1] ? "onlineStatusBubble" : "offlineStatusBubble"} />
+        </div>
+
         <div id='userPopupTitleInfo'>
-          <p>@{userOpen}</p>
+          <div id='userIconImgContainer'>
+            <div id='userIconImg' />
+          </div>
+
+          <p id='userInfoName'>@{userOpen}</p>
         </div>
       </div>
     </div>
