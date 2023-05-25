@@ -41,8 +41,8 @@ const MainChatComponent = ({ darkMode, userOpen, setUserPopupActive }) => {
         />
 
         <div id='userHeaderOnlineStatusTextContainer' ref={statusRef}>
-          <div id='userHeaderOnlineStatusArrow' onlineStatus={userOpen[1]} />
-          <p id='userHeaderOnlineStatusText'>Online</p>
+          <div id='userHeaderOnlineStatusArrow' />
+          <p id='userHeaderOnlineStatusText' style={userOpen[1] ? { color: 'rgba(71, 255, 166, 1)' } : { color: '#ff483b' }}>{userOpen[1] ? "Online" : "Offline"}</p>
         </div>
       </div>
 

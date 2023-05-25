@@ -16,7 +16,7 @@ const MessageSendBoxComponent = ({ messages, setMessages, userOpen }) => {
       let currUser = [userOpen[0]];
 
       messages.map((user) => {
-        if (user[0] === userOpen[0]) {
+        if (user[0][0] === userOpen[0]) {
           tempMessage = [...user[1]];
           return 0;
         } else {
@@ -26,8 +26,8 @@ const MessageSendBoxComponent = ({ messages, setMessages, userOpen }) => {
 
       let date = new Date().toLocaleString();
       tempMessage.splice(0, 0, { user: 0, time: `${date}`, message: inputRef.current.value });
-      currUser.push(tempMessage);
-      tempAllMessages.push(currUser);
+
+      tempAllMessages.push([currUser, tempMessage]);
       inputRef.current.value = "";
       setMessages(tempAllMessages);
     }
